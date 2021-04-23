@@ -1,0 +1,16 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+<div class="create-article">
+    <h1>
+        create new article
+    </h1>
+    <form action="{% url 'articles:create' %}" method="POST" class="site-form" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="create">
+    </form>
+</div>
+<script src="/static/slugi.js"></script>
+{% endblock %}
